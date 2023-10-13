@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Gabarito:wght@400;500;600;700;800;900&family=Pacifico&display=swap');
 * {
   outline: none;
   box-sizing: border-box;
@@ -9,7 +10,7 @@
   --border-color: rgba(113 119 144 / 25%);
   --theme-color: #f9fafb;
   --inactive-color: rgb(113 119 144 / 78%);
-  --body-font: "Poppins", sans-serif;
+  --body-font: "Gabarito", sans-serif;
   --hover-menu-bg: rgba(12 15 25 / 30%);
   --content-title-color: #999ba5;
   --content-bg: rgb(146 151 179 / 13%);
@@ -476,7 +477,7 @@ body.light-mode .video-bg:before {
 
 .img-content {
   font-weight: 500;
-  font-size: 17px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   margin: 0;
@@ -488,7 +489,7 @@ body.light-mode .video-bg:before {
 
 .content-text {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 16px;
   line-height: 1.7em;
   color: #ebecec;
@@ -500,10 +501,11 @@ body.light-mode .video-bg:before {
 }
 
 .content-wrapper-context {
-  max-width: 350px;
+  max-width: 400px;
 }
 
 .content-button {
+  font-family: var(--body-font);
   background-color: #3a6df0;
   border: none;
   padding: 8px 26px;
