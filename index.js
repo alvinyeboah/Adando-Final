@@ -1,22 +1,22 @@
 const express = require('express')
 const app = express()
 const port = 3200
+const fs = require('fs')
 app.use(express.static('src'))
+const bodyParser = require('body-parser');
+
+
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.sendFile(__dirname+ "/src/index.html"))
-app.post('/storeMood', (req, res) => {
-  const { mood } = req.body;
-
-  const newMood = new Mood({ mood });
-
-  newMood.save((err, mood) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send('Internal Server Error');
-    }
-
-    res.status(200).send('Mood stored successfully');
+app.post('/saveMood', (req, res) => {
+  const moodValue = req.body.mood;
+  fs.appendFile('moods.json', JSON.stringify({ mood: moodValue }) + '\n', (err) => {
+      if (err) throw err;
+      console.log('Mood saved!');
   });
+  res.send('Mood saved successfully!');
 });
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
