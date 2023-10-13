@@ -135,3 +135,41 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => console.error('Error:', error));
   }
 });
+
+$(document).ready(function() {
+  // When the user clicks the button, open the modal
+  $("#openModalBtn").click(function() {
+    $("#modalprice").css("display", "block");
+  });
+
+  // When the user clicks the close button or anywhere outside of the modal, close it
+  $(".modal-content .close").click(function() {
+    $("#modalprice").css("display", "none");
+  });
+
+  $(window).click(function(event) {
+    if (event.target.id == "modalprice") {
+      $("#modalprice").css("display", "none");
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const modalbreathe = document.getElementById('modal-breathe');
+  const startButton = document.getElementById('startButton');
+  const closeButton = document.querySelector('.close-breathe');
+  const startExerciseButton = document.getElementById('startExercise');
+
+  startButton.addEventListener('click', function() {
+      modal.style.display = 'block';
+  });
+
+  closeButton.addEventListener('click', function() {
+      modal.style.display = 'none';
+  });
+
+  startExerciseButton.addEventListener('click', function() {
+      // Start the breathing exercise logic here
+      modal.style.display = 'none';
+  });
+});

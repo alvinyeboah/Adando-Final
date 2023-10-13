@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.sendFile(__dirname+ "/src/index.html"))
+
 app.post('/saveMood', (req, res) => {
   const moodValue = req.body.mood;
   fs.appendFile('moods.txt', moodValue + '\n', (err) => {
@@ -19,4 +20,4 @@ app.post('/saveMood', (req, res) => {
 });
 
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port)
