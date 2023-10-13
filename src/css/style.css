@@ -348,7 +348,7 @@ body.light-mode .video-bg:before {
 }
 
 .side-title {
-  color: var(--inactive-color);
+  color: black;
   margin-bottom: 14px;
 }
 
@@ -374,6 +374,7 @@ body.light-mode .video-bg:before {
 .side-menu svg {
   width: 16px;
   margin-right: 8px;
+  aspect-ratio: 1;
 }
 
 .updates {
