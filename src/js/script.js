@@ -153,23 +153,23 @@ $(document).ready(function() {
     }
   });
 });
-
 document.addEventListener('DOMContentLoaded', function() {
   const modalbreathe = document.getElementById('modal-breathe');
   const startButton = document.getElementById('startButton');
   const closeButton = document.querySelector('.close-breathe');
   const startExerciseButton = document.getElementById('startExercise');
 
-  startButton.addEventListener('click', function() {
-      modal.style.display = 'block';
+  startButton.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    modalbreathe.style.display = 'block';
   });
 
   closeButton.addEventListener('click', function() {
-      modal.style.display = 'none';
+    modalbreathe.style.display = 'none';
   });
 
   startExerciseButton.addEventListener('click', function() {
-      // Start the breathing exercise logic here
-      modal.style.display = 'none';
+    modalbreathe.style.display = 'none';
   });
 });
+
