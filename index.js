@@ -11,11 +11,11 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => res.sendFile(__dirname+ "/src/index.html"))
 app.post('/saveMood', (req, res) => {
   const moodValue = req.body.mood;
-  fs.appendFile('moods.json', JSON.stringify({ mood: moodValue }) + '\n', (err) => {
+  fs.appendFile('moods.txt', moodValue + '\n', (err) => {
       if (err) throw err;
       console.log('Mood saved!');
+      res.send('Mood saved successfully!');
   });
-  res.send('Mood saved successfully!');
 });
 
 

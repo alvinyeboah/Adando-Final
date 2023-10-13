@@ -77,6 +77,15 @@ $(document).ready(function () {
     $("#moodModal").css("display", "block");
   });
 
+  $(".emoji").click(function () {
+    $(".emoji").removeClass("active"); // Remove active class from all buttons
+    $(this).addClass("active"); // Add active class to the clicked button
+
+    let selectedMood = $(this).data("mood");
+    console.log(`Selected mood: ${selectedMood}`);
+    saveMood(selectedMood);
+});
+
   $(".close").click(function () {
     $("#moodModal").css("display", "none");
   });
@@ -87,4 +96,42 @@ $(document).ready(function () {
 
     $("#moodModal").css("display", "none");
   });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('moodModal');
+  const closeModalButton = modal.querySelector('.close');
+  const emojiButtons = modal.querySelectorAll('.emoji');
+  const saveButton = modal.querySelector('#saveMood');
+  const feedbackMessage = modal.querySelector('.feedback-message');
+
+  closeModalButton.addEventListener('click', function() {
+      modal.style.display = 'none';
+  });
+
+  emojiButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+          const selectedMood = this.dataset.mood;
+          saveMood(selectedMood);
+      });
+  });
+
+  function saveMood(mood) {
+      fetch('/saveMood', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ mood: mood })
+      })
+      .then(response => response.text())
+      .then(data => {
+          console.log(data);
+          feedbackMessage.innerText = 'Mood logged!';
+          setTimeout(() => {
+              modal.style.display = 'none';
+              feedbackMessage.innerText = '';
+          }, 2000); // Display the message for 2 seconds
+      })
+      .catch(error => console.error('Error:', error));
+  }
 });
