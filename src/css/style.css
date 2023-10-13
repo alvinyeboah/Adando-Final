@@ -943,3 +943,8 @@ body.light-mode .video-bg:before {
   border-radius:50%;
   padding:3px 5px;
 }
+
+#small-logo {
+  aspect-ratio:1;
+  width:32px;
+}
