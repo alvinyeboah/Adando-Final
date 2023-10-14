@@ -953,10 +953,11 @@ body.light-mode .video-bg:before {
 .feedback-message {
   font-family: 'Gabarito', sans-serif;
   color: #fff;
+  font-style: italic;
 }
 
 .close {
-  color: #aaa;
+  color: #fff;
   position: absolute;
   top: 20px;
   right: 20px;
