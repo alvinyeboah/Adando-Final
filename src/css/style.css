@@ -450,6 +450,7 @@ body.light-mode .video-bg:before {
   color: var(--theme-color);
   padding: 0 30px;
 }
+
 @media screen and (max-width: 1055px) {
   .menu-link-main {
     display: none;
@@ -568,6 +569,7 @@ body.light-mode .video-bg:before {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
+  color: var(--theme-color);
 }
 .content-section-title {
   color: var(--theme-color);
@@ -1025,6 +1027,9 @@ body.light-mode .video-bg:before {
   font-family: 'Raleway', Arial, sans-serif;
   color: #ffffff;
   text-align: left;
+  position: absolute;;
+  top: 20%;
+  left: 20%;
   font-size: 16px;
   width: 100%;
   max-width: 1000px;
@@ -1168,6 +1173,20 @@ body.light-mode .video-bg:before {
   background-color: rgba(0, 0, 0, 0.6);
   padding-top: 60px;
 }
+
+.modal-price .close{
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-price .close:hover {
+  color: #000;
+}
+
 
 .modal-content-price {
 
