@@ -88,6 +88,7 @@ $(document).ready(function () {
 
   $(".close").click(function () {
     $("#moodModal").css("display", "none");
+    $("#moodPrice").css("display", "none");
   });
 
   $(".mood").click(function () {
