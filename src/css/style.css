@@ -570,7 +570,7 @@ body.light-mode .video-bg:before {
   flex-direction: column;
 }
 .content-section-title {
-  color: var(--content-title-color);
+  color: var(--theme-color);
   margin-bottom: 14px;
 }
 .content-section ul {
