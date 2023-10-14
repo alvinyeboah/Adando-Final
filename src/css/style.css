@@ -393,6 +393,7 @@ body.light-mode .video-bg:before {
   font-weight: 400;
   padding: 10px;
   font-size: 14px;
+  font-weight: 500;
   border-radius: 6px;
   transition: 0.3s;
 }
@@ -441,6 +442,7 @@ body.light-mode .video-bg:before {
 }
 
 .menu-link-main {
+  font-family: 'Gulfs Display Normal';
   text-decoration: none;
   color: var(--theme-color);
   padding: 0 30px;
@@ -515,7 +517,7 @@ body.light-mode .video-bg:before {
 }
 
 .content-text {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   margin-top: 16px;
   line-height: 1.7em;
@@ -533,6 +535,7 @@ body.light-mode .video-bg:before {
 
 .content-button {
   font-family: var(--body-font);
+  font-weight: 500;
   background-color: #3a6df0;
   border: none;
   padding: 8px 26px;
