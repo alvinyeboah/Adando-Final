@@ -1025,6 +1025,9 @@ body.light-mode .video-bg:before {
   font-family: 'Raleway', Arial, sans-serif;
   color: #ffffff;
   text-align: left;
+  position: absolute;;
+  top: 20%;
+  left: 20%;
   font-size: 16px;
   width: 100%;
   max-width: 1000px;
