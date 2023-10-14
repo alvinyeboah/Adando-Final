@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Gabarito:wght@400;500;600;700;800;900&family=Pacifico&display=swap');
+
+@font-face{
+  font-family: 'Gulfs Display Normal';
+  src: url('font/GulfsDisplay-Normal.woff2') format('woff2'),
+      url('font/GulfsDisplay-Normal.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   outline: none;
   box-sizing: border-box;
@@ -37,6 +47,10 @@
   --hover-menu-bg: rgba(255 255 255 / 35%);
   --scrollbar-bg: rgb(255 253 253 / 57%);
   --content-title-color: #000000;
+}
+
+h3{
+  font-family:'Gulfs Display Normal', sans-serif;
 }
 
 html {
@@ -360,7 +374,7 @@ body.light-mode .video-bg:before {
 }
 
 .side-title {
-  font-weight: 700;
+  font-family:'Gulfs Display Normal', sans-serif;
   color: white;
   margin-bottom: 14px;
 }
