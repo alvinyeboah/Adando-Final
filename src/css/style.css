@@ -97,13 +97,13 @@ img {
 .dark-light svg {
   width: 24px;
   flex-shrink: 0;
-  fill: #ffce45;
-  stroke: #ffce45;
+  fill: #cafed1;
+  stroke: #cafed1;
   transition: 0.5s;
 }
 
 .light-mode .dark-light svg {
-  fill: transparent;
+  fill: #000;
   stroke: var(--theme-color);
 }
 .light-mode .profile-img {
