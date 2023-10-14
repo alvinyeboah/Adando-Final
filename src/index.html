@@ -31,7 +31,7 @@
         <div class="menu-circle"></div>
         <div class="header-menu">
           <a class="menu-link is-active" href="#">Apps</a>
-          <a class="menu-link" href="#"> My AI</a><span class="notification-number updates"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg></span>
+          <a class="menu-link flex" href="#"> My AI<span class="notification-number updates"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg></span></a>
           <a class="menu-link notify" href="#">Communities</a>
           <a class="menu-link notify" href="#">Games & Rewards</a>
         </div>
@@ -189,7 +189,7 @@
                   our community and embark on a path of growth and
                   self-discovery.
                 </div>
-                <button class="content-button">START FREE TRIAL</button>
+                <button id="free-trial-button" class="content-button">START FREE TRIAL</button>
               </div>
               <img
                 class="content-wrapper-img"
@@ -464,6 +464,7 @@
                     </svg>
                     Premiere Pro
                   </span>
+                  
                   <div class="app-card__subtext">
                     Edit, master and create fully proffesional videos
                   </div>
@@ -516,6 +517,9 @@
                     </svg>
                     After Effects
                   </span>
+                  <div id="modal-breathe" class="modal">
+            
+          </div>  
                   <div class="app-card__subtext">
                     Industry Standart motion graphics & visual effects
                   </div>
@@ -529,7 +533,7 @@
           </div>
         </div>
       </div>
-      <div class="overlay-app"></div>
+
       <div id="moodModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -545,10 +549,10 @@
               <div class="feedback-message"></div>
             </div>
           </div>
-          <div id="modalprice" class="modal">
-            <div class="modal-content">
-              <!-- Your existing content goes here -->
-
+          
+    </div><div id="moodPrice" class="modal-price">
+            <div class="modal-content-price">
+              
 <div class="snip1265">
   <div class="plan">
     <header><i class="ion-ios-navigate-outline"></i>
@@ -643,27 +647,8 @@
     <div class="plan-select"><a href="">Select Plan</a></div>
   </div>
 </div>
-            
-          </div>
-          <div class="container">
-            <h1>Breathe App</h1>
-            <button id="startButton">Start Breathing</button>
-        </div>
-    
-        <div id="modal-breathe" class="modal">
-            <div class="modal-breathe-content">
-                <span class="close-breathe">&times;</span>
-                <h2>Instructions</h2>
-                <p>Follow the guided breathing exercise to relax and calm your mind.</p>
-                <button id="startExercise">Start</button>
-            </div>
-        </div>
-    
-          
-
-    
-      
-    </div>
+                </div>
+              </div>
     <!-- partial -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/script.js"></script>

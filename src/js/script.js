@@ -153,23 +153,10 @@ $(document).ready(function() {
     }
   });
 });
-document.addEventListener('DOMContentLoaded', function() {
-  const modalbreathe = document.getElementById('modal-breathe');
-  const startButton = document.getElementById('startButton');
-  const closeButton = document.querySelector('.close-breathe');
-  const startExerciseButton = document.getElementById('startExercise');
 
-  startButton.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    modalbreathe.style.display = 'block';
-  });
 
-  closeButton.addEventListener('click', function() {
-    modalbreathe.style.display = 'none';
-  });
-
-  startExerciseButton.addEventListener('click', function() {
-    modalbreathe.style.display = 'none';
+$(document).ready(function () {
+  $("#free-trial-button").click(function () {
+    $("#moodPrice").css("display", "block");
   });
 });
-
