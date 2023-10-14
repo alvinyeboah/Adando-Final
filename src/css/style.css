@@ -371,10 +371,6 @@ body.light-mode .video-bg:before {
   white-space: nowrap;
 }
 
-#icons{
-  color: #ffffff;
-}
-
 .side-menu a {
   text-decoration: none;
   color: var(--theme-color);
