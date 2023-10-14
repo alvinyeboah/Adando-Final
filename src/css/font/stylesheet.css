@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Gulfs Display Normal';
+    src: url('GulfsDisplay-Normal.woff2') format('woff2'),
+        url('GulfsDisplay-Normal.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

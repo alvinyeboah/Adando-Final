@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Gabarito:wght@400;500;600;700;800;900&family=Pacifico&display=swap');
+
+@font-face{
+  font-family: 'Gulfs Display Normal';
+  src: url('font/GulfsDisplay-Normal.woff2') format('woff2'),
+      url('font/GulfsDisplay-Normal.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   outline: none;
   box-sizing: border-box;
@@ -36,7 +46,11 @@
   --popup-bg: rgb(255 255 255);
   --hover-menu-bg: rgba(255 255 255 / 35%);
   --scrollbar-bg: rgb(255 253 253 / 57%);
-  --content-title-color: --theme-color;
+  --content-title-color: #000000;
+}
+
+h3{
+  font-family:'Gabarito', sans-serif;
 }
 
 html {
@@ -89,19 +103,21 @@ img {
   box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
   padding: 8px;
   border-radius: 50%;
+  width: auto;
+  height: 40px;
   z-index: 3;
   cursor: pointer;
 }
 .dark-light svg {
   width: 24px;
   flex-shrink: 0;
-  fill: #ffce45;
-  stroke: #ffce45;
+  fill: #cafed1;
+  stroke: #cafed1;
   transition: 0.5s;
 }
 
 .light-mode .dark-light svg {
-  fill: transparent;
+  fill: #000;
   stroke: var(--theme-color);
 }
 .light-mode .profile-img {
@@ -116,9 +132,18 @@ img {
 .light-mode .dropdown.is-active ul {
   background-color: rgba(255, 255, 255, 0.94);
 }
-
+.light-mode .content-wrapper {
+  color: #fff;
+}
+.light-mode .side-title{
+  color:#000;
+}
+.light-mode .side-menu a{
+  color: #000;
+}
 body.light-mode:before,
 body.light-mode .video-bg:before {
+  color: #000000;
   content: "";
   position: absolute;
   left: 0;
@@ -349,7 +374,8 @@ body.light-mode .video-bg:before {
 }
 
 .side-title {
-  color: black;
+  font-family:'Gabarito', sans-serif;
+  color: white;
   margin-bottom: 14px;
 }
 
@@ -358,6 +384,7 @@ body.light-mode .video-bg:before {
   flex-direction: column;
   white-space: nowrap;
 }
+
 .side-menu a {
   text-decoration: none;
   color: var(--theme-color);
@@ -366,6 +393,7 @@ body.light-mode .video-bg:before {
   font-weight: 400;
   padding: 10px;
   font-size: 14px;
+  font-weight: 500;
   border-radius: 6px;
   transition: 0.3s;
 }
@@ -414,6 +442,7 @@ body.light-mode .video-bg:before {
 }
 
 .menu-link-main {
+  font-family: 'Gabarito';
   text-decoration: none;
   color: var(--theme-color);
   padding: 0 30px;
@@ -488,7 +517,7 @@ body.light-mode .video-bg:before {
 }
 
 .content-text {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   margin-top: 16px;
   line-height: 1.7em;
@@ -506,6 +535,7 @@ body.light-mode .video-bg:before {
 
 .content-button {
   font-family: var(--body-font);
+  font-weight: 500;
   background-color: #3a6df0;
   border: none;
   padding: 8px 26px;
@@ -905,10 +935,29 @@ body.light-mode .video-bg:before {
   border-radius: 10px;
   max-width: 600px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* -- this part was copied over from content-wrapper -- */
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), linear-gradient(to right top,#7eec8c 0%, #536563 45%, rgba(6,153,105,1) 60%, #7eec8c 80% );
+  border-radius: 14px;
+}
+
+.modal-content h2{
+  font-family: 'Gabarito', sans-serif;
+  color: #fff;
+  font-weight: 400;
+}
+
+.feedback-message {
+  font-family: 'Gabarito', sans-serif;
+  color: #fff;
+  font-style: italic;
 }
 
 .close {
-  color: #aaa;
+  color: #fff;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -936,14 +985,17 @@ body.light-mode .video-bg:before {
 
 
 #openModal {
-  margin:15px
+  margin: 15px
 }
 
 .emoji.active {
-  background-color: #3498db; /* Example color for active state */
+  background-color: #cafed1; /* Example color for active state */
   color: #fff; /* Example color for active state */
   border-radius:50%;
   padding:3px 5px;
+  height: 50px;
+  width: auto;
+  bottom: 50px;
 }
 
 #small-logo {
