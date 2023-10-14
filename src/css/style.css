@@ -1173,6 +1173,20 @@ body.light-mode .video-bg:before {
   padding-top: 60px;
 }
 
+.modal-price .close{
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-price .close:hover {
+  color: #000;
+}
+
+
 .modal-content-price {
 
 }
