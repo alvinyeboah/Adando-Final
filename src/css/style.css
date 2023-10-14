@@ -937,14 +937,11 @@ body.light-mode .video-bg:before {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
   /* -- this part was copied over from content-wrapper -- */
-
-  display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), linear-gradient(to right top,#7eec8c 0%, #536563 45%, rgba(6,153,105,1) 60%, #7eec8c 80% );
   border-radius: 14px;
-  padding: 20px 40px;
 }
 
 .modal-content h2{
@@ -987,14 +984,17 @@ body.light-mode .video-bg:before {
 
 
 #openModal {
-  margin:15px
+  margin: 15px
 }
 
 .emoji.active {
-  background-color: #3498db; /* Example color for active state */
+  background-color: #cafed1; /* Example color for active state */
   color: #fff; /* Example color for active state */
   border-radius:50%;
   padding:3px 5px;
+  height: 50px;
+  width: auto;
+  bottom: 50px;
 }
 
 #small-logo {
