@@ -1073,7 +1073,7 @@ body.light-mode .video-bg:before {
 }
 .snip1265 .plan {
   margin: 0;
-  width: 25%;
+  width: 30%;
   position: relative;
   float: left;
   background-color: #262626;
@@ -1102,7 +1102,7 @@ body.light-mode .video-bg:before {
 .snip1265 header i {
   font-size: 56px;
   margin: 0 15px;
-  color: #12f328;
+  color: #cafed1;
   display: inline-block;
   float: left;
 }
@@ -1139,7 +1139,7 @@ body.light-mode .video-bg:before {
   padding: 5px 5%;
   font-weight: 500;
   opacity: 0.5;
-  border-left: 5px solid #12f328;
+  border-left: 5px solid #cafed1;
   margin: 2px 20px;
 }
 .snip1265 .plan-select {
@@ -1156,7 +1156,7 @@ body.light-mode .video-bg:before {
   font-weight: 800;
   text-transform: uppercase;
   display: inline-block;
-  background-color: #12f328;
+  background-color: #3a6df0;
 }
 .snip1265 .plan-select a:hover {
   background-color: #262626;
