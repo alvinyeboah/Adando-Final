@@ -1008,6 +1008,8 @@ body.light-mode .video-bg:before {
   position: absolute;
   top: 20px;
   right: 20px;
+  width: auto;
+  height: 45px;
   font-size: 30px;
   cursor: pointer;
 }
