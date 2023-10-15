@@ -460,6 +460,14 @@
                 <button class="emoji" data-mood="😔">😔</button>
                 <button class="emoji" data-mood="😢">😢</button>
               </div>
+              <form action="/moodData" method="post" onsubmit="saveData()">
+                <div class="mood-input">
+                  <input type="text" name="moodInput" id="moodInput" placeholder="Why do you feel this way?">
+                  <input type="submit" value="Submit Mood">
+                </div>
+              </form>
+              
+              
 
               <div class="feedback-message"></div>
             </div>

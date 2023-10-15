@@ -309,3 +309,46 @@ $("#refresh-affirmation").click(function () {
 $(".close").click(function () {
   $("#modalAffirm").css("display", "none");
 });
+document.addEventListener('keydown', function(event) {
+  if (event.key === "Escape") {
+    $("#modalAffirm").css("display", "none");
+    $("#moodModal").css("display", "none");
+    $("#moodPrice").css("display", "none");
+
+  }
+});
+
+function saveData() {
+  // Get the selected emoji
+  const selectedEmoji = document.querySelector('.emoji-buttons .selected').textContent;
+
+  // Get the text input
+  const moodInput = document.getElementById('moodInput').value;
+
+  // Combine emoji and text input
+  const dataToSave = `${selectedEmoji} - ${moodInput}\n`;
+
+  // Send the data to the server for saving
+  fetch('/saveMoodData', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ moodData: dataToSave }),
+  });
+}
+// Assuming moodValue contains the selected emoji
+fetch('/moodData', {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'text/plain',
+  },
+  body: JSON.stringify(moodValue),
+})
+
+$(document).ready(function() {
+  setTimeout(function() {
+    $('#moodModal').css('display', 'block');
+
+  }, 2000); 
+});

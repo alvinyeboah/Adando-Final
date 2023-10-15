@@ -1234,3 +1234,33 @@ body.light-mode .video-bg:before {
 .modal-content-price {
 
 }
+.mood-input {
+  position: relative;
+  width: 300px;
+  margin: 20px auto;
+  gap: 5px;
+}
+
+.mood-input input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #4caf50; /* Green theme */
+  color: #fff;
+  font-size: 16px;
+}
+
+.mood-input input::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
+
+input {
+  margin: 4px;
+}
+input:hover {
+  cursor: pointer;
+  background-color: #3bf083;
+}
