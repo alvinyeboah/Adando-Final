@@ -34,21 +34,5 @@ app.get('/moodData', (req, res) => {
     res.json(moodData);
   });
 });
-const api_url = "https://type.fit/api/quotes";
-
-        async function getapi(url) {
-            const response = await fetch(url);
-            var data = await response.json();
-            displayData(data);
-        }
-
-        function displayData(data) {
-            const quoteContainer = document.getElementById("quote-container");
-            data.forEach(quote => {
-                const quoteElement = document.createElement("p");
-                quoteElement.textContent = `"${quote.text}" - ${quote.author}`;
-                quoteContainer.appendChild(quoteElement);
-            });
-        }
 
 app.listen(port)

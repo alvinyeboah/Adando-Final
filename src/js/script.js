@@ -77,6 +77,36 @@ $(document).ready(function () {
     $("#moodModal").css("display", "block");
   });
 
+  $("#affirmButton").click(function () {
+    $("#modalAffirm").css("display", "block");
+  });
+  $(".modal-content-affirm .close").click(function() {
+    $(".modal-affirm").css("display", "none");
+  });
+
+  $("#affirmButton").click(function () {
+    const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://type.fit/api/quotes",
+      "method": "GET"
+    }
+  
+    $.ajax(settings).done(function (response) {
+      const data = JSON.parse(response);
+      const randomIndex = Math.floor(Math.random() * data.length);
+      const randomQuote = data[randomIndex].text;
+      console.log(randomQuote)
+      $('.feedback-message').text(randomQuote);
+  
+      $("#modalAffirm").css("display", "block");
+    });
+  });
+  
+  $(".close").click(function () {
+    $("#modalAffirm").css("display", "none");
+  });
+
   $(".emoji").click(function () {
     $(".emoji").removeClass("active"); // Remove active class from all buttons
     $(this).addClass("active"); // Add active class to the clicked button
@@ -85,6 +115,8 @@ $(document).ready(function () {
     console.log(`Selected mood: ${selectedMood}`);
     saveMood(selectedMood);
 });
+
+
 
   $(".close").click(function () {
     $("#moodModal").css("display", "none");
@@ -187,23 +219,7 @@ $(document).ready(function() {
     $("#modalprice").css("display", "none");
   });
 
-  $(window).click(function(event) {
-    if (event.target.id == "modalprice") {
-      $("#modalprice").css("display", "none");
-    }
-  });
-});
-
-$(document).ready(function() {
-  // When the user clicks the button, open the modal
-  $("#affirm").click(function() {
-    $("#modalprice").css("display", "block");
-  });
-
-  // When the user clicks the close button or anywhere outside of the modal, close it
-  $(".modal-content .close").click(function() {
-    $("#modalprice").css("display", "none");
-  });
+ 
 
   $(window).click(function(event) {
     if (event.target.id == "modalprice") {
@@ -211,6 +227,8 @@ $(document).ready(function() {
     }
   });
 });
+
+
 
 
 $(document).ready(function () {
@@ -248,3 +266,27 @@ function fetchMoodData() {
       })
       .catch(error => console.error('Error:', error));
 }
+
+
+$("#affirmSide").click(function () {
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://type.fit/api/quotes",
+    "method": "GET"
+  }
+
+  $.ajax(settings).done(function (response) {
+    const data = JSON.parse(response);
+    const randomIndex = Math.floor(Math.random() * data.length);
+    const randomQuote = data[randomIndex].text;
+    console.log(randomQuote)
+    $('.feedback-message').text(randomQuote);
+
+    $("#modalAffirm").css("display", "block");
+  });
+});
+
+$(".close").click(function () {
+  $("#modalAffirm").css("display", "none");
+});

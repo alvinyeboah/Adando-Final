@@ -942,6 +942,42 @@ body.light-mode .video-bg:before {
   max-width: 600px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
+
+  /* -- this part was copied over from content-wrapper -- */
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png"), linear-gradient(to right top,#7eec8c 0%, #536563 45%, rgba(6,153,105,1) 60%, #7eec8c 80% );
+  border-radius: 14px;
+}
+
+.modal-content p{
+  font-family: 'Gabarito', sans-serif;
+  color: #fff;
+  font-weight: 400;
+}
+.modal-affirm {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 60px;
+}
+
+.modal-content-affirm {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+  
   /* -- this part was copied over from content-wrapper -- */
   align-items: center;
   width: 100%;
