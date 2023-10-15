@@ -106,8 +106,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const feedbackMessage = modal.querySelector('.feedback-message');
 
   closeModalButton.addEventListener('click', function() {
-      modal.style.display = 'none';
-  });
+    modal.style.display = 'none';
+    fetchMoodData(); 
+});
+
 
   emojiButtons.forEach(function(button) {
       button.addEventListener('click', function() {
@@ -137,9 +139,64 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('/moodData')
+    .then(response => response.json())
+    .then(data => {
+      const moodCounts = {};
+      data.forEach(mood => {
+        moodCounts[mood] = (moodCounts[mood] || 0) + 1;
+      });
+
+      const labels = Object.keys(moodCounts);
+      const counts = Object.values(moodCounts);
+
+      const ctx = document.getElementById('moodChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Mood Counts',
+            data: counts,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              stepSize: 1
+            }
+          }
+        }
+      });
+    });
+});
+
 $(document).ready(function() {
   // When the user clicks the button, open the modal
   $("#openModalBtn").click(function() {
+    $("#modalprice").css("display", "block");
+  });
+
+  // When the user clicks the close button or anywhere outside of the modal, close it
+  $(".modal-content .close").click(function() {
+    $("#modalprice").css("display", "none");
+  });
+
+  $(window).click(function(event) {
+    if (event.target.id == "modalprice") {
+      $("#modalprice").css("display", "none");
+    }
+  });
+});
+
+$(document).ready(function() {
+  // When the user clicks the button, open the modal
+  $("#affirm").click(function() {
     $("#modalprice").css("display", "block");
   });
 
@@ -161,3 +218,33 @@ $(document).ready(function () {
     $("#moodPrice").css("display", "block");
   });
 });
+
+function fetchMoodData() {
+  fetch('/getMoodData')
+      .then(response => response.json())
+      .then(data => {
+          const ctx = document.getElementById('moodChart').getContext('2d');
+          const chart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: Object.keys(data), // Assuming data is an object with dates as keys
+                  datasets: [{
+                      label: 'Mood',
+                      data: Object.values(data), // Assuming data is an object with mood values
+                      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                      borderColor: 'rgba(75, 192, 192, 1)',
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          max: 5
+                      }
+                  }
+              }
+          });
+      })
+      .catch(error => console.error('Error:', error));
+}
