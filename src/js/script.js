@@ -287,6 +287,25 @@ $("#affirmSide").click(function () {
   });
 });
 
+$("#refresh-affirmation").click(function () {
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://type.fit/api/quotes",
+    "method": "GET"
+  }
+
+  $.ajax(settings).done(function (response) {
+    const data = JSON.parse(response);
+    const randomIndex = Math.floor(Math.random() * data.length);
+    const randomQuote = data[randomIndex].text;
+    console.log(randomQuote)
+    $('.feedback-message').text(randomQuote);
+
+    $("#modalAffirm").css("display", "block");
+  });
+});
+
 $(".close").click(function () {
   $("#modalAffirm").css("display", "none");
 });
