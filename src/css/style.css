@@ -189,6 +189,10 @@ body.light-mode .video-bg:before {
   .header {
     padding: 0 16px;
   }
+
+  .left-side {
+    display: none;
+  }
 }
 .header-menu {
   display: flex;
