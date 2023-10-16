@@ -4,12 +4,12 @@ const port = 3000;
 const fs = require("fs");
 app.use(express.static("src"));
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => res.sendFile(__dirname + "/src/index.html"));
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs");
 // mongoose.connect(
 //   "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.1",
 //   { useNewUrlParser: true, useUnifiedTopology: true }
