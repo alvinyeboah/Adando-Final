@@ -344,11 +344,4 @@ fetch('/moodData', {
       'Content-Type': 'text/plain',
   },
   body: JSON.stringify(moodValue),
-})
-
-$(document).ready(function() {
-  setTimeout(function() {
-    $('#moodModal').css('display', 'block');
-
-  }, 2000); 
 });

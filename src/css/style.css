@@ -189,6 +189,10 @@ body.light-mode .video-bg:before {
   .header {
     padding: 0 16px;
   }
+
+  .left-side {
+    display: none;
+  }
 }
 .header-menu {
   display: flex;
@@ -1110,7 +1114,6 @@ body.light-mode .video-bg:before {
   font-size: 56px;
   margin: 0 15px;
   color: #cafed1;
-  display: inline-block;
   float: left;
 }
 .snip1265 .plan-title {
@@ -1263,4 +1266,4 @@ input {
 input:hover {
   cursor: pointer;
   background-color: #3bf083;
-}
+}ƒ
