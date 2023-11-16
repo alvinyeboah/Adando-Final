@@ -84,36 +84,35 @@ $(document).ready(function () {
     $(".modal-affirm").css("display", "none");
   });
 
-  $("#affirmButton").click(function () {
-    const settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "https://type.fit/api/quotes",
-      "method": "GET"
-    }
-  
-    $.ajax(settings).done(function (response) {
-      const data = JSON.parse(response);
-      const randomIndex = Math.floor(Math.random() * data.length);
-      const randomQuote = data[randomIndex].text;
-      console.log(randomQuote)
-      $('.feedback-message').text(randomQuote);
-  
-      $("#modalAffirm").css("display", "block");
-    });
-  });
-  
-  $(".close").click(function () {
-    $("#modalAffirm").css("display", "none");
-  });
+$("#affirmButton").click(function () {
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://type.fit/api/quotes",
+    "method": "GET"
+  }
 
-  $(".emoji").click(function () {
-    $(".emoji").removeClass("active"); // Remove active class from all buttons
-    $(this).addClass("active"); // Add active class to the clicked button
+  $.ajax(settings).done(function (response) {
+    const data = JSON.parse(response);
+    const randomIndex = Math.floor(Math.random() * data.length);
+    const randomQuote = data[randomIndex].text;
+    console.log(randomQuote)
+    $('.feedback-message').text(randomQuote);
 
-    let selectedMood = $(this).data("mood");
-    console.log(`Selected mood: ${selectedMood}`);
-    saveMood(selectedMood);
+    $("#modalAffirm").css("display", "block");
+  });
+});
+  
+$(".close").click(function () {
+  $("#modalAffirm").css("display", "none");
+});
+
+$(".emoji").click(function () {
+  $(".emoji").removeClass("active"); 
+  $(this).addClass("active"); 
+  let selectedMood = $(this).data("mood");
+  console.log(`Selected mood: ${selectedMood}`);
+  saveMood(selectedMood);
 });
 
 
@@ -344,4 +343,15 @@ fetch('/moodData', {
       'Content-Type': 'text/plain',
   },
   body: JSON.stringify(moodValue),
+});
+
+$(document).ready(function() {
+  $("#aibutton").click(function() {
+    $("#aihelper").css("display", "block");
+  });
+
+  $(".modal-content .close").click(function() {
+    $("#modalprice").css("display", "none");
+  });
+
 });
